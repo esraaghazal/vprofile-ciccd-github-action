@@ -35,9 +35,18 @@ jobs:
             -Dsonar.projectKey=vprofile \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+# check the SonarQube report
+      - name: Check Sonar Report 
+        run: |
+         find . -name report-task.txt
+         ls -R target || true
+
+
       - name: Wait for Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@master
         with:
-          timeout-minutes: 5
+          scanMetadataReportFile: target/sonar/report-task.txt
+          pollingTimeoutSec: 300
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
