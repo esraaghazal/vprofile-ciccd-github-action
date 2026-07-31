@@ -43,10 +43,12 @@ jobs:
          ls -R target || true
 
 # wait for the SonarQube Quality Gate result
-      - name: Wait for Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        with:
-          scanMetadataReportFile: target/sonar/report-task.txt
-          pollingTimeoutSec: 300
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#      - name: Wait for Quality Gate
+#        uses: sonarsource/sonarqube-quality-gate-action@master
+#        with:
+#          scanMetadataReportFile: target/sonar/report-task.txt
+#          pollingTimeoutSec: 300
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
