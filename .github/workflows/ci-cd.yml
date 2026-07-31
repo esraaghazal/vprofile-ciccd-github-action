@@ -70,14 +70,14 @@ jobs:
           docker build \
           -f docker/front/Dockerfile \
           -t ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-front:${{ github.sha }} \
-          .
+          docker/front
 
       - name: Build Database Image
         run: |
           docker build \
           -f docker/db/Dockerfile \
           -t ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-db:${{ github.sha }} \
-           .
+           docker/db
 
       - name: List Docker Images
         run: docker images
