@@ -83,7 +83,7 @@ jobs:
         run: docker images
 
       - name: Scan Backend Image
-        uses: aquasecurity/trivy-action@0.33.1
+        uses: aquasecurity/trivy-action@v0.32.0
         with:
           image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-back:${{ github.sha }}
           format: table
@@ -91,7 +91,7 @@ jobs:
           severity: CRITICAL,HIGH
 
       - name: Scan Frontend Image
-        uses: aquasecurity/trivy-action@0.33.1
+        uses: aquasecurity/trivy-action@v0.32.0
         with:
           image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-front:${{ github.sha }}
           format: table
@@ -99,7 +99,7 @@ jobs:
           severity: CRITICAL,HIGH
 
       - name: Scan Database Image
-        uses: aquasecurity/trivy-action@0.33.1
+        uses: aquasecurity/trivy-action@v0.32.0
         with:
           image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-db:${{ github.sha }}
           format: table
