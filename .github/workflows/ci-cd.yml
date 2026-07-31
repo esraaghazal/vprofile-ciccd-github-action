@@ -110,11 +110,30 @@ jobs:
          --exit-code 0 \
          ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-db:${{ github.sha }}
 
+
+      - name: Tag Backend as latest
+        run: |
+         docker tag \
+         ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-back:${{ github.sha }} \
+         ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-back:latest
+
       - name: Push Backend
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-back:${{ github.sha }}
 
+      - name: Tag Frontend as latest
+        run: |
+         docker tag \
+         ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-front:${{ github.sha }} \
+         ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-front:latest 
+
       - name: Push Frontend
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-front:${{ github.sha }}
+
+      - name: Tag Database as latest
+        run: |
+         docker tag \
+         ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-db:${{ github.sha }} \
+         ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-db:latest
 
       - name: Push Database
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/vprofile-db:${{ github.sha }}
