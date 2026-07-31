@@ -42,7 +42,7 @@ jobs:
          find . -name report-task.txt
          ls -R target || true
 
-
+# wait for the SonarQube Quality Gate result
       - name: Wait for Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@master
         with:
