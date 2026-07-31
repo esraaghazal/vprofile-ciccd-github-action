@@ -2,7 +2,7 @@ FROM maven:3.8.6-openjdk-8-slim AS build
 
 WORKDIR /app
 
-COPY . .
+COPY ./src .
 
 RUN mvn clean package -DskipTests
 
