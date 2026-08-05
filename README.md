@@ -11,7 +11,7 @@ The pipeline automates code validation, security scanning, container image manag
 #  Architecture
 
 ```
-![Uploading image.png…]()
+![Uploading photo_2026-08-05_13-58-08.jpg…]()
 
 ```
 
