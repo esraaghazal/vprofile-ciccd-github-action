@@ -10,11 +10,12 @@ The pipeline automates code validation, security scanning, container image manag
 
 #  Architecture
 
-```
-<img width="1280" height="853" alt="photo_2026-08-05_13-58-08" src="https://github.com/user-attachments/assets/8faae162-6af1-4c49-8e81-aa84dad6444a" />
 
 
-```
+<img width="1280" height="853" alt="photo_2026-08-05_13-58-08" src="https://github.com/user-attachments/assets/3bf65773-7972-4eea-936a-226834bec26b" />
+
+
+
 
 ---
 
